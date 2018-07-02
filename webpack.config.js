@@ -1,16 +1,20 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const openBrowserPlugin = require('open-browser-webpack-plugin');
 
 // Node environment variable
 const env = process.env.NODE_ENV.trim();
 
 // Pre-generate both plugins and app list to handle configuration based on different environments
 var plugins = [
-    new HtmlWebpackPlugin({
+    new htmlWebpackPlugin({
         template: path.join(__dirname, 'public', 'index.html'),
         favicon: path.join(__dirname, 'public', 'favicon.ico'),
         filename: 'index.html'
+    }),
+    new openBrowserPlugin({
+        url: 'http://localhost:8080'
     })
 ];
 
