@@ -12,14 +12,16 @@ export default class ChangeText extends Component {
         const signedIn = this.props.signedIn; 
         return (
             <div>
-                {signedIn ? <textarea 
-                    name={this.props.storeId}
-                    id={this.props.contentId} 
-                    cols="30" 
-                    rows="10" 
-                    value={this.props.content1} 
-                    onChange={this.props.changeText}
-                ></textarea> : ''}
+                {signedIn && this.props.content !== undefined ? 
+                    <textarea 
+                        name={this.props.storeId}
+                        id={this.props.contentId} 
+                        cols="100" 
+                        rows="10" 
+                        value={this.props.content} 
+                        onChange={this.props.changeText}
+                        ></textarea> 
+                :   ''}
             </div>
         );
     }

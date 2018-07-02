@@ -21,10 +21,20 @@ export default class Store extends Component {
                     contentId='content1' 
                     storeId={store.storeId} 
                     signedIn={this.props.signedIn} 
-                    content1={store.content1} 
+                    content={store.content1} 
+                    changeText={this.props.changeText}
+                ></ChangeText>
+
+                <p>{store.content2}</p>
+                <ChangeText 
+                    contentId='content2' 
+                    storeId={store.storeId} 
+                    signedIn={this.props.signedIn} 
+                    content={store.content2} 
                     changeText={this.props.changeText}
                 ></ChangeText>
             </div>
         );
+        
     }
 }
