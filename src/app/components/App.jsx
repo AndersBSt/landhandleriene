@@ -4,7 +4,7 @@ export default class App extends Component {
     render() {
         return (
             <div className="App">
-                Webpack and Babel working
+                Testing
             </div>
         );
     }

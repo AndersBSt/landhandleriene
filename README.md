@@ -4,8 +4,9 @@
 
 - [Resources/Tutorials/Pages](#resources/tutorials/pages)
   - [Webpack and Babel Setup](#webpack-and-babel-setup)
-  - [Advanced Webpack and Babel Setup for Production](#advanced-webpack-and-babel-setup-for-production-as-well-as-some-express-+-node-server)
-  - [Nodemon Setup](#nodemon-setup)
+  - [HTML Webpack Plugin](#html-webpack-plugin)
+  - [Development Server Setup](#development-server-setup)
+  - [Production Server Setup](#production-server-setup)
 
 ## Resources/Tutorials/Pages
 
@@ -13,10 +14,14 @@
 The most minimal Webpack and Babel setup for it to work.
 - [The minimal React + Webpack 4 + Babel Setup](https://www.robinwieruch.de/minimal-react-webpack-babel-setup/).
 
-### Advanced Webpack and Babel Setup for Production as well as some Express + Node server.
-Bloated, but some more advanced features to Webpack and Babel.
-- [How to conquer Webpack 4 and build a sweet React app](https://medium.freecodecamp.org/how-to-conquer-webpack-4-and-build-a-sweet-react-app-236d721e6745).
+### HTML Webpack Plugin
+Documentation and instructions page for HTML Webpack Plugin, that's useful for generating an index.html file in build folder.
+- [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin).
 
-### Nodemon Setup
-Nodemon setup, most of it is redundant. Nodemon part can be useful for reference.
-- [Full Stack Web Application using React, Node.js, Express and Webpack](https://hackernoon.com/full-stack-web-application-using-react-node-js-express-and-webpack-97dbd5b9d708).
+### Development Server Setup
+Useful guide for understanding how to integrate and create a development server in Express with hot reloading.
+- [Live Reload / Hot Module Replacement with Webpack Middleware](https://blog.cloudboost.io/live-reload-hot-module-replacement-with-webpack-middleware-d0a10a86fc80).
+
+### Production Server Setup
+A simple tutorial on how to serve build files with a production server in Express
+- [How to get create-react-app to work with a Node.js back-end API](https://medium.freecodecamp.org/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0).
