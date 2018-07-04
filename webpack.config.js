@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
-const openBrowserPlugin = require('open-browser-webpack-plugin');
 
 // Node environment variable
 const env = process.env.NODE_ENV.trim();
@@ -12,9 +11,6 @@ var plugins = [
         template: path.join(__dirname, 'public', 'index.html'),
         favicon: path.join(__dirname, 'public', 'favicon.ico'),
         filename: 'index.html'
-    }),
-    new openBrowserPlugin({
-        url: 'http://localhost:8080'
     })
 ];
 

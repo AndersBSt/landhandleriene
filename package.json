@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "set NODE_ENV=development && nodemon ./src/server/server.js",
+    "start": "set NODE_ENV=development && nodemon ./src/server/server.js | start http://localhost:8080",
     "build": "set NODE_ENV=production && webpack --progress && node ./src/server/server.js"
   },
   "dependencies": {
+    "express": "^4.16.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
     "semantic-ui-react": "^0.81.3"
   },
   "devDependencies": {
@@ -21,7 +21,6 @@
     "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.17.5",
-    "open-browser-webpack-plugin": "0.0.5",
     "webpack": "^4.14.0",
     "webpack-cli": "^3.0.8",
     "webpack-dev-middleware": "^3.1.3",
