@@ -25,6 +25,7 @@ Useful guide for understanding how to integrate and create a development server 
 
 ### In-Memory Serving of Webpack Output during Development
 Simple fix for serving the output from Webpack with Express during development. Since the output is stored in-memory, Express can't find HTML or bundle files on the harddrive and thus this causes differing behaviour between development and build. Essentially solves some problems that are in development mode, but are non-existant in production. For example getting the `Cannot GET /Page` problem with React-Router during development that is explained [here](https://tylermcginnis.com/react-router-cannot-get-url-refresh/).
+- [HtmlWebpackPlugin + webpack-dev-middleware other pathname than /](https://github.com/jantimon/html-webpack-plugin/issues/145)
 
 ### Production Server Setup
 A simple tutorial on how to serve build files with a production server in Express
