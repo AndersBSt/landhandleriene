@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "set NODE_ENV=development && nodemon ./src/server/server.js | start http://localhost:8080",
+    "start": "set NODE_ENV=development && start http://localhost:8080 | nodemon ./src/server/server.js",
     "build": "set NODE_ENV=production && webpack --progress && node ./src/server/server.js"
   },
   "dependencies": {
