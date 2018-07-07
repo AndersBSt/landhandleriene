@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Nav from './components/Nav'
-import Store from './components/Store';
-import Landingpage from './components/Landingpage';
+import Nav from './Nav'
+import Store from './Store';
+import Landingpage from './Landingpage';
 
 export default class App extends Component {
     constructor(props) {
