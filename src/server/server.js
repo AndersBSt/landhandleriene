@@ -17,4 +17,4 @@ else if (env === 'production') {
 }
 
 // Start the backend express server to listen for requests
-app.listen(8080, () => console.log('Listening on port 8080'));
+app.listen(8080, () => console.log('Listening at http://localhost:8080'));
