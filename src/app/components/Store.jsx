@@ -11,30 +11,28 @@ export default class Store extends Component {
     }
 
     render() {
-        const store = this.props.store;
         return (
             <div>
-                <h1>{store.storeName}</h1>
-                <h2>{store.header}</h2>
-                <p>{store.content1}</p>
+                <h1>{this.props.store.storeName}</h1>
+                <h2>{this.props.store.header}</h2>
+                <p>{this.props.store.content1}</p>
                 <ChangeText 
                     contentId='content1' 
-                    storeId={store.storeId} 
+                    storeId={this.props.store.storeId} 
                     signedIn={this.props.signedIn} 
-                    content={store.content1} 
-                    changeText={this.props.changeText}
+                    content={this.props.store.content1} 
+                    changeText={(e) => this.props.changeStore(e)}
                 ></ChangeText>
 
-                <p>{store.content2}</p>
+                <p>{this.props.store.content2}</p>
                 <ChangeText 
                     contentId='content2' 
-                    storeId={store.storeId} 
+                    storeId={this.props.store.storeId} 
                     signedIn={this.props.signedIn} 
-                    content={store.content2} 
-                    changeText={this.props.changeText}
+                    content={this.props.store.content2} 
+                    changeText={(e) => this.props.changeStore(e)}
                 ></ChangeText>
             </div>
         );
-        
     }
 }
