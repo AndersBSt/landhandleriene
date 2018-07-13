@@ -1,6 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { h, render } from 'preact';
 import App from './components/App';
 import "../../semantic/semantic.less";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+render(<App />, document.body);

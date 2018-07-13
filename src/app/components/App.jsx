@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { h, Component } from 'preact';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { base } from '../../server/firebase/firebase';

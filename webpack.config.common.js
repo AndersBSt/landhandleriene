@@ -28,7 +28,8 @@ module.exports = {
     resolve: {
         extensions: ['*', '.js', '.jsx'],
         alias: {
-            '../../theme.config$': path.join(__dirname, 'semantic/theme.config')
+            '../../theme.config$': path.join(__dirname, 'semantic/theme.config'),
+            'react': 'preact-compat'
         }
     },
     module: {

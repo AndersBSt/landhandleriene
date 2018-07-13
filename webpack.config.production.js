@@ -2,6 +2,7 @@ const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionPlugin = require('compression-webpack-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const common = require('./webpack.config.common');
 
@@ -26,11 +27,9 @@ module.exports = merge(common, {
     plugins: [
         new CompressionPlugin({
             test: /\.js$|\.css$/,
-            asset: '[path].gz[query]',
-            algorithm: 'gzip',
-            threshold: 10240,
-            minRatio: 0.8,
             deleteOriginalAssets: true
-        })
+        })/*,
+        To analyze bundle requires deleteOriginalAssets to be false. As it requires the original bundle.js and app.css files to analyze
+        new BundleAnalyzerPlugin()*/
     ]
 });
