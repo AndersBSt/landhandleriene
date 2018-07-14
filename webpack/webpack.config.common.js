@@ -7,17 +7,17 @@ const env = process.env.NODE_ENV.trim() !== 'production';
 module.exports = {
     entry: {
         app: [
-            path.join(__dirname, 'src', 'app', 'index.js')
+            path.join(__dirname, '..', 'src', 'app', 'index.js')
         ]
     },   
     output: {
-        path: path.join(__dirname, 'build'),
+        path: path.join(__dirname, '..', 'build'),
         filename: 'bundle.js'
     },
     plugins: [
         new HtmlPlugin({
-            template: path.join(__dirname, 'public', 'index.html'),
-            favicon: path.join(__dirname, 'public', 'favicon.ico'),
+            template: path.join(__dirname, '..', 'public', 'index.html'),
+            favicon: path.join(__dirname, '..', 'public', 'favicon.ico'),
             filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
@@ -28,7 +28,7 @@ module.exports = {
     resolve: {
         extensions: ['*', '.js', '.jsx'],
         alias: {
-            '../../theme.config$': path.join(__dirname, 'semantic/theme.config'),
+            '../../theme.config$': path.join(__dirname, '..', 'semantic', 'theme.config'),
             'react': 'preact-compat'
         }
     },

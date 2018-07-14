@@ -5,7 +5,7 @@
   "main": "src/app/index.js",
   "scripts": {
     "start": "set NODE_ENV=development && start http://localhost:8080 | nodemon ./src/server/server.js",
-    "build": "set NODE_ENV=production && webpack --progress --config ./webpack.config.production.js && node ./src/server/server.js"
+    "build": "set NODE_ENV=production && webpack --progress --config ./webpack/webpack.config.production.js && node ./src/server/server.js"
   },
   "dependencies": {
     "express": "^4.16.3",
