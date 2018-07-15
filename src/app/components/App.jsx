@@ -1,34 +1,46 @@
 import { h, Component } from 'preact';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { base } from '../../server/firebase/firebase';
+import { base, firebaseAuth } from '../../server/firebase/firebase';
 
 import Nav from './Nav'
 import Store from './Store';
 import Landingpage from './Landingpage';
+import Admin from './Admin';
+import Footer from './Footer';
 
 export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            signedIn: true,
-            stores: {
-                evanger: {},
-                kvamskogen: {},
-                tysse: {}
-            }
+            signedIn: false,
+            loading: true,
+            stores: { }
         }
     }
 
     componentWillMount() {
         this.storesRef = base.syncState('stores', {
             context: this,
-            state: 'stores'
+            state: 'stores',
+            then: () => {this.setState({loading: false})}
         });
+    }
+
+    componentDidMount() {
+        this.authListerner = firebaseAuth.onAuthStateChanged((user) => {
+            if(user){
+                this.setState({signedIn: true})
+                console.log(user)
+            } else {
+                this.setState({signedIn: false})
+            }
+        })
     }
     
     componentWillUnmount() {
         base.removeBinding(this.storesRef);
+        this.authListerner(); 
     }
 
     changeStore(e) {
@@ -40,13 +52,18 @@ export default class App extends Component {
     render() {
         return (
             <Router>
-                <div>
-                    <Nav></Nav>
-                    <Route exact path="/" component={Landingpage}/>
-                    <Route path="/evanger" render={() => <Store changeStore={(e) => this.changeStore(e)} signedIn={this.state.signedIn} store={this.state.stores.evanger} />}/>
-                    <Route path="/kvamskogen" render={() => <Store changeStore={(e) => this.changeStore(e)} signedIn={this.state.signedIn} store={this.state.stores.kvamskogen}/>}/>
-                    <Route path="/tysse" render={() => <Store changeStore={(e) => this.changeStore(e)} signedIn={this.state.signedIn} store={this.state.stores.tysse}/>}/>
-                </div>
+                    {this.state.loading ? 
+                    <h1>Loading</h1> :
+                    <div>
+                        <Nav signedIn={this.state.signedIn}></Nav>
+                        <Route exact path="/" component={Landingpage}/>
+                        <Route path="/evanger" render={() => <Store changeStore={(e) => this.changeStore(e)} signedIn={this.state.signedIn} store={this.state.stores.evanger} />}/>
+                        <Route path="/kvamskogen" render={() => <Store changeStore={(e) => this.changeStore(e)} signedIn={this.state.signedIn} store={this.state.stores.kvamskogen}/>}/>
+                        <Route path="/tysse" render={() => <Store changeStore={(e) => this.changeStore(e)} signedIn={this.state.signedIn} store={this.state.stores.tysse}/>}/>
+                        <Route path="/admin" render={() => <Admin signedIn={this.state.signedIn}></Admin>} /> 
+                        <Footer signedIn={this.state.signedIn}></Footer> 
+                    </div>
+                    }
             </Router>
         );
     }
