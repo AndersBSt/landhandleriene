@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import React, { Component } from 'react';
 
 import ChangeText from './ChangeText';
 
@@ -21,7 +21,7 @@ export default class Store extends Component {
                     storeId={this.props.store.storeId} 
                     signedIn={this.props.signedIn} 
                     content={this.props.store.content1} 
-                    changeText={(e) => this.props.changeStore(e)}
+                    changeText={(e) => this.props.changeText(e)}
                 ></ChangeText>
 
                 <p>{this.props.store.content2}</p>
@@ -30,7 +30,7 @@ export default class Store extends Component {
                     storeId={this.props.store.storeId} 
                     signedIn={this.props.signedIn} 
                     content={this.props.store.content2} 
-                    changeText={(e) => this.props.changeStore(e)}
+                    changeText={(e) => this.props.changeText(e)}
                 ></ChangeText>
             </div>
         );

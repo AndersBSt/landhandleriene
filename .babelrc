@@ -13,7 +13,6 @@
                     "semantic-ui-react"
                 ]
             }
-        ],
-        ["transform-react-jsx", { "pragma": "h" }]
+        ]
     ]
 }

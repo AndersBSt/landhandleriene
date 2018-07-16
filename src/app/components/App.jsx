@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { base, firebaseAuth } from '../../server/firebase/firebase';
@@ -43,7 +43,7 @@ export default class App extends Component {
         this.authListerner(); 
     }
 
-    changeStore(e) {
+    changeText(e) {
         this.setState({
             stores: {[e.target.name]: {...this.state[e.target.name], [e.target.id]: e.target.value}}
         });
@@ -54,15 +54,17 @@ export default class App extends Component {
             <Router>
                     {this.state.loading ? 
                     <h1>Loading</h1> :
-                    <div>
-                        <Nav signedIn={this.state.signedIn}></Nav>
-                        <Route exact path="/" component={Landingpage}/>
-                        <Route path="/evanger" render={() => <Store changeStore={(e) => this.changeStore(e)} signedIn={this.state.signedIn} store={this.state.stores.evanger} />}/>
-                        <Route path="/kvamskogen" render={() => <Store changeStore={(e) => this.changeStore(e)} signedIn={this.state.signedIn} store={this.state.stores.kvamskogen}/>}/>
-                        <Route path="/tysse" render={() => <Store changeStore={(e) => this.changeStore(e)} signedIn={this.state.signedIn} store={this.state.stores.tysse}/>}/>
-                        <Route path="/admin" render={() => <Admin signedIn={this.state.signedIn}></Admin>} /> 
-                        <Footer signedIn={this.state.signedIn}></Footer> 
-                    </div>
+                        <div>
+                            <Nav signedIn={this.state.signedIn}></Nav>
+                            
+                            <Route exact path="/" component={Landingpage}/>
+                            <Route path="/evanger" render={() => <Store changeText={(e) => this.changeText(e)} signedIn={this.state.signedIn} store={this.state.stores.evanger} />}/>
+                            <Route path="/kvamskogen" render={() => <Store changeText={(e) => this.changeText(e)} signedIn={this.state.signedIn} store={this.state.stores.kvamskogen}/>}/>
+                            <Route path="/tysse" render={() => <Store changeText={(e) => this.changeText(e)} signedIn={this.state.signedIn} store={this.state.stores.tysse}/>}/>
+                            <Route path="/admin" render={() => <Admin signedIn={this.state.signedIn}></Admin>} />
+
+                            <Footer signedIn={this.state.signedIn}></Footer> 
+                        </div>
                     }
             </Router>
         );

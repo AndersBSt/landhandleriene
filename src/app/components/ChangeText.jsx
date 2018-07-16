@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import React, { Component } from 'react';
 
 export default class ChangeText extends Component {
     constructor(props) {

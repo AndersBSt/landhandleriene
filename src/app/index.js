@@ -1,5 +1,8 @@
-import { h, render } from 'preact';
-import App from './components/App';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import "../../semantic/semantic.less";
 
-render(<App />, document.body);
+import App from './components/App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
