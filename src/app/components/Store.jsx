@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import ChangeText from './ChangeText';
 
+import { Container } from 'semantic-ui-react';
+
 export default class Store extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +14,7 @@ export default class Store extends Component {
 
     render() {
         return (
-            <div>
+            <Container>
                 <h1>{this.props.store.storeName}</h1>
                 <h2>{this.props.store.header}</h2>
                 <p>{this.props.store.content1}</p>
@@ -32,7 +34,7 @@ export default class Store extends Component {
                     content={this.props.store.content2} 
                     changeText={(e) => this.props.changeText(e)}
                 ></ChangeText>
-            </div>
+            </Container>
         );
     }
 }

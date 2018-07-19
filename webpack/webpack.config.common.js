@@ -39,7 +39,7 @@ module.exports = {
                 use: 'babel-loader'
             },
             {
-                test: /\.less$/,
+                test: /\.(css|less)$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
             },
             {

@@ -9,6 +9,8 @@ import Landingpage from './Landingpage';
 import Admin from './Admin';
 import Footer from './Footer';
 
+import { Container, Loader, Dimmer } from 'semantic-ui-react';
+
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -53,7 +55,9 @@ export default class App extends Component {
         return (
             <Router>
                     {this.state.loading ? 
-                    <h1>Loading</h1> :
+                    <Dimmer active>
+                        <Loader />
+                    </Dimmer> :
                         <div>
                             <Nav signedIn={this.state.signedIn}></Nav>
                             

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Container } from 'semantic-ui-react';
+
 export default class Landingpage extends Component {
     constructor(props) {
         super(props);
@@ -11,7 +13,9 @@ export default class Landingpage extends Component {
     render() {
         return (
             <div>
-                <h1>Velkommen til landhandleriene</h1>
+                <Container>
+                    <h1>Velkommen til landhandleriene</h1>
+                </Container>
             </div>
         );
     }

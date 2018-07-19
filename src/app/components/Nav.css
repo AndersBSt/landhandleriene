@@ -1,0 +1,23 @@
+/* Nav */
+@import "../css/global.css";
+
+.nav-container {
+    display: flex;
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 25px; 
+    color: var(--black);
+    opacity: 0.5;
+}
+
+.nav-item:first-child {
+    padding-left: 0;
+}
+
+.nav-item:hover, .nav .active{
+    opacity: 1;
+    color: var(--black);
+}
+
