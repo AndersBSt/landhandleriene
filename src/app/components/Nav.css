@@ -1,8 +1,9 @@
 /* Nav */
 @import "../css/global.css";
 
-.nav-container {
+.nav-item-container {
     display: flex;
+    transition: 150ms ease-out;
 }
 
 .nav-item {
@@ -10,6 +11,8 @@
     padding: 15px 25px; 
     color: var(--black);
     opacity: 0.5;
+
+    transition: opacity 100ms ease-in-out;
 }
 
 .nav-item:first-child {
@@ -21,3 +24,38 @@
     color: var(--black);
 }
 
+.nav-container .burger {
+    display: none; 
+}
+
+@media (max-width: 990px) {
+    .nav-item {
+        padding: 15px 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav {
+        position: absolute;
+        height: 100%;
+        background: var(--white);
+        box-shadow: 3px 0 2px rgba(0,0,0,0.2);
+    }
+    .nav-item-container {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        padding-left: 0;
+    }
+
+    .nav-hidden {
+        display: none; 
+    }
+
+    .nav-container .burger {
+        display: block;
+        z-index: 1;
+        padding: 14px;
+    }
+}

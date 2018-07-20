@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { signIn } from '../../server/firebase/firebase';
 
+import { Container } from 'semantic-ui-react';
+
 export default class Admin extends Component {
     constructor(props) {
         super(props);
@@ -18,7 +20,7 @@ export default class Admin extends Component {
 
     render() {
         return (
-            <div>
+            <Container>
                 {this.props.signedIn ? 
                 <div>
                     <h1>Velkommen!</h1> 
@@ -30,7 +32,7 @@ export default class Admin extends Component {
                     <button type="submit">Login</button>
                     {this.state.errMsg === null ? '' : <p>{this.state.errMsg}</p>}
                 </form>}
-            </div>
+            </Container>
         );
     }
 }

@@ -9,7 +9,7 @@ import Landingpage from './Landingpage';
 import Admin from './Admin';
 import Footer from './Footer';
 
-import { Container, Loader, Dimmer } from 'semantic-ui-react';
+import { Loader, Dimmer } from 'semantic-ui-react';
 
 export default class App extends Component {
     constructor(props) {
