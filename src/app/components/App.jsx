@@ -31,7 +31,6 @@ export default class App extends Component {
         this.authListerner = firebaseAuth.onAuthStateChanged((user) => {
             if(user){
                 this.setState({signedIn: true})
-                console.log(user)
             } else {
                 this.setState({signedIn: false})
             }
@@ -43,9 +42,9 @@ export default class App extends Component {
         this.authListerner(); 
     }
 
-    changeText(e) {
+    updateStore(storeContent) {
         this.setState({
-            stores: {[e.target.name]: {...this.state[e.target.name], [e.target.id]: e.target.value}}
+            stores: { ...this.state.stores, [storeContent.storeId]: storeContent}
         });
     }
 
@@ -58,10 +57,10 @@ export default class App extends Component {
                             <Nav signedIn={this.state.signedIn}></Nav>
                             
                             <Route exact path="/" component={Landingpage}/>
-                            <Route path="/evanger" render={() => <Store changeText={(e) => this.changeText(e)} signedIn={this.state.signedIn} store={this.state.stores.evanger} />}/>
-                            <Route path="/kvamskogen" render={() => <Store changeText={(e) => this.changeText(e)} signedIn={this.state.signedIn} store={this.state.stores.kvamskogen}/>}/>
-                            <Route path="/tysse" render={() => <Store changeText={(e) => this.changeText(e)} signedIn={this.state.signedIn} store={this.state.stores.tysse}/>}/>
-                            <Route path="/admin" render={() => <Admin signedIn={this.state.signedIn}></Admin>} />
+                            <Route path="/evanger" render={() => <Store signedIn={this.state.signedIn} store={this.state.stores.evanger} updateStore={(storeContent) => this.updateStore(storeContent)} />}/>
+                            <Route path="/kvamskogen" render={() => <Store signedIn={this.state.signedIn} store={this.state.stores.kvamskogen} updateStore={(storeContent) => this.updateStore(storeContent)} />}/>
+                            <Route path="/tysse" render={() => <Store signedIn={this.state.signedIn} store={this.state.stores.tysse} updateStore={(storeContent) => this.updateStore(storeContent)} />}/>
+                            <Route path="/admin" render={() => <Admin signedIn={this.state.signedIn} />} />
 
                             <Footer signedIn={this.state.signedIn}></Footer> 
                         </div>
