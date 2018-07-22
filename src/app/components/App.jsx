@@ -15,7 +15,6 @@ export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            signedIn: false,
             loading: true,
             stores: { }
         }
@@ -35,7 +34,8 @@ export default class App extends Component {
                 this.setState({signedIn: true})
                 console.log(user)
             } else {
-                this.setState({signedIn: false})
+                const {signedIn, ...state} = this.state;
+                this.setState({state})
             }
         })
     }

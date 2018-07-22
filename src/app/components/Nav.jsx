@@ -14,9 +14,21 @@ export default class Nav extends Component {
         }
     }
 
+    componentDidMount() {
+        document.addEventListener('click', this.handleOutsideClick)
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleOutsideClick)
+    }
+
     handleBurgerClick(e) {
         let nav = document.querySelector('.nav');
         nav.classList.toggle('nav-hidden');
+    }
+
+    handleOutsideClick(e) {
+
     }
 
 
