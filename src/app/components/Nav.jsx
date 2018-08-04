@@ -24,18 +24,38 @@ export default class Nav extends Component {
 
     handleBurgerClick(e) {
         let nav = document.querySelector('.nav');
+        let burger = document.querySelector('.hamburger')
         nav.classList.toggle('nav-hidden');
+        burger.classList.toggle('is-active')
     }
 
     handleOutsideClick(e) {
+        let outside = true; 
+        let nav = document.querySelector('.nav');
+        let burger = document.querySelector('.hamburger')
 
+        for(let i = 0; i < e.path.length - 2; i++) {
+            if(e.path[i].classList.contains('nav-container') ) {
+                outside = false; 
+            } 
+        }
+
+        if(outside && !nav.classList.contains('nav-hidden')) {
+            nav.classList.add('nav-hidden');
+            burger.classList.remove('is-active');
+        }
     }
 
 
     render() {
         return (
                 <div className="nav-container">
-                    <div className="burger" onClick={() => this.handleBurgerClick() }>burger</div>
+                    <div className="hamburger hamburger--squeeze mobile" onClick={() => this.handleBurgerClick() }>
+                        <div className="hamburger-box">
+                            <div className="hamburger-inner"></div>
+                        </div>
+                    </div>
+
                     <div className="nav nav-hidden">
                         <Container>
                             <div className="nav-item-container">
@@ -52,4 +72,3 @@ export default class Nav extends Component {
         );
     }
 }
-
