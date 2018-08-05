@@ -30,63 +30,66 @@ export default class Store extends Component {
         let signedIn = this.props.signedIn;
         return (
             <div>
-                <Segment basic textAlign='center'>
-                    <h1>{this.props.store.storeName}</h1>
-                    {signedIn &&
-                        <Rail attached position='right'>
-                            <EditAttribute
-                                attribute='storeName'
-                                changeStore={(attribute, value) => this.changeStore(attribute, value)}
-                                label='Endre Butikk Navn'
-                                value={this.state.storeName}
-                            />
-                        </Rail>
-                    }
-                </Segment>
 
-                <Segment basic textAlign='center'>
-                    <h2>{this.props.store.header}</h2>
-                    {signedIn &&
-                        <Rail attached position='right'>
-                            <EditAttribute
-                                attribute='header'
-                                changeStore={(attribute, value) => this.changeStore(attribute, value)}
-                                label='Endre Topptekst'
-                                value={this.state.header}
-                            />
-                        </Rail>
-                    }
-                </Segment>
-                
-                <Segment raised textAlign='center'>
-                    <p>{this.props.store.content1}</p>
+                <Container>
+                    <Segment basic textAlign='center'>
+                        <h1>{this.props.store.storeName}</h1>
                         {signedIn &&
                             <Rail attached position='right'>
                                 <EditAttribute
-                                    attribute='content1'
+                                    attribute='storeName'
                                     changeStore={(attribute, value) => this.changeStore(attribute, value)}
-                                    label='Endre Seksjon'
-                                    textArea
-                                    value={this.state.content1}
+                                    label='Endre Butikk Navn'
+                                    value={this.state.storeName}
                                 />
                             </Rail>
                         }
-                </Segment>
+                    </Segment>
 
-                <Segment raised textAlign='center'>
-                    <p>{this.props.store.content2}</p>
+                    <Segment basic textAlign='center'>
+                        <h2>{this.props.store.header}</h2>
                         {signedIn &&
                             <Rail attached position='right'>
                                 <EditAttribute
-                                    attribute='content2'
+                                    attribute='header'
                                     changeStore={(attribute, value) => this.changeStore(attribute, value)}
-                                    label='Endre Seksjon'
-                                    textArea
-                                    value={this.state.content2}
+                                    label='Endre Topptekst'
+                                    value={this.state.header}
                                 />
                             </Rail>
                         }
-                </Segment>
+                    </Segment>
+                    
+                    <Segment basic textAlign='center'>
+                        <p>{this.props.store.content1}</p>
+                            {signedIn &&
+                                <Rail attached position='right'>
+                                    <EditAttribute
+                                        attribute='content1'
+                                        changeStore={(attribute, value) => this.changeStore(attribute, value)}
+                                        label='Endre Seksjon'
+                                        textArea
+                                        value={this.state.content1}
+                                    />
+                                </Rail>
+                            }
+                    </Segment>
+
+                    <Segment basic textAlign='center'>
+                        <p>{this.props.store.content2}</p>
+                            {signedIn &&
+                                <Rail attached position='right'>
+                                    <EditAttribute
+                                        attribute='content2'
+                                        changeStore={(attribute, value) => this.changeStore(attribute, value)}
+                                        label='Endre Seksjon'
+                                        textArea
+                                        value={this.state.content2}
+                                    />
+                                </Rail>
+                            }
+                    </Segment>
+                </Container>
             </div>
         );
     }

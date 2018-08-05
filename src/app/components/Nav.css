@@ -144,6 +144,7 @@
 
 @media (max-width: 767px) {
     .nav {
+        z-index: 100;
         display: none;
         opacity: 0;
         position: absolute;
