@@ -3,6 +3,8 @@ import { Segment, Rail } from 'semantic-ui-react';
 
 import EditAttribute from './EditAttribute';
 
+import { Container } from 'semantic-ui-react';
+
 export default class Store extends Component {
     constructor(props) {
         super(props);
