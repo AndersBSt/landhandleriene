@@ -6,6 +6,8 @@ import { signOut } from '../../server/firebase/firebase';
 import { Container } from 'semantic-ui-react';
 import './Nav.css';
 
+import logo from '../img/Logo.svg';
+
 export default class Nav extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +27,7 @@ export default class Nav extends Component {
     handleBurgerClick(e) {
         let nav = document.querySelector('.nav');
         let burger = document.querySelector('.hamburger')
-        nav.classList.toggle('nav-hidden');
+        nav.classList.toggle('is-active');
         burger.classList.toggle('is-active')
     }
 
@@ -41,7 +43,7 @@ export default class Nav extends Component {
         }
 
         if(outside && !nav.classList.contains('nav-hidden')) {
-            nav.classList.add('nav-hidden');
+            nav.classList.remove('is-active');
             burger.classList.remove('is-active');
         }
     }
@@ -56,9 +58,10 @@ export default class Nav extends Component {
                         </div>
                     </div>
 
-                    <div className="nav nav-hidden">
+                    <div className="nav">
                         <Container>
                             <div className="nav-item-container">
+                                <img className="nav-logo" src={logo} />
                                 <NavLink exact className="nav-item" activeClassName="active" to="/">Hjem</NavLink>
                                 <NavLink className="nav-item" activeClassName="active" to="/evanger">Evanger Landhandleri</NavLink>
                                 <NavLink className="nav-item" activeClassName="active" to="/kvamskogen">Kvamskogen Landhandleri</NavLink>
