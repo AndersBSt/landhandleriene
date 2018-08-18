@@ -6,7 +6,7 @@ const developmentServer = express();
 
 // Import Webpack configuration file
 const config = require('../../webpack/webpack.config.development');
-    
+
 // Initialize Webpack with configuration
 const compiler = require('webpack')(config);
 
@@ -24,7 +24,7 @@ developmentServer.use('*', (req, res) => {
     const filename = path.join(compiler.outputPath, 'index.html');
     compiler.outputFileSystem.readFile(filename, (err, result) => {
         if (err) {
-            return next(err);
+            console.log(err);
         }
         res.set('content-type', 'text/html');
         res.send(result);

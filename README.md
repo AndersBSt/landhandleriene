@@ -1,5 +1,7 @@
 # Landhandleriene
 
+If it fails during compilation due to some calc or property error. Simply run `npm install less@3.0.4 --save-dev` in the command line. If that doesn't work, uninstall less with `npm uninstall less --save-dev` then run the command prior to that command.
+
 ## Table of Contents
 
 - [Resources/Tutorials/Pages](#resources/tutorials/pages)
