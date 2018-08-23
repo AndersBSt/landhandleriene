@@ -23,23 +23,25 @@ export default class LandingPage extends Component {
 
     render() {
         return (
-            <div>
-                <Container>
-                    <Segment basic textAlign='center'>
-                        <h2>{this.props.home.header}</h2>
-                        {this.props.signedIn &&
-                            <Rail attached position='right'>
-                                <EditAttribute
-                                    attribute='header'
-                                    handleChangeParent={(attribute, value) => this.changeLandingPage(attribute, value)}
-                                    label='Endre Topptekst'
-                                    value={this.state.header}
-                                />
-                            </Rail>
-                        }
-                    </Segment>
-                </Container>
-            </div>
+            <Container>
+                <Segment basic textAlign='center'>
+                    <h1 className='welcome'>Velkommen til Landhandleriene</h1>
+                </Segment>
+
+                <Segment basic textAlign='center'>
+                    <h2 className='header'>{this.props.home.header}</h2>
+                    {this.props.signedIn &&
+                        <Rail attached position='right'>
+                            <EditAttribute
+                                attribute='header'
+                                handleChangeParent={(attribute, value) => this.changeLandingPage(attribute, value)}
+                                label='Endre Topptekst'
+                                value={this.state.header}
+                            />
+                        </Rail>
+                    }
+                </Segment>
+            </Container>
         );
     }
 }

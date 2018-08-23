@@ -4,6 +4,7 @@ import { Button, Modal, Segment, Form } from 'semantic-ui-react'
 export default class EditAttribute extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             value: this.props.value,
             visible: false
@@ -50,37 +51,27 @@ export default class EditAttribute extends Component {
                         {this.props.label}
                     </Modal.Header>
 
-                    {this.props.textArea &&
-                        <Modal.Description>
-                            <Segment>
-                                <h5>Forhåndsvisning:</h5>
-
-                                {this.state.value}
-                            </Segment>
-                        </Modal.Description>
-                    }
-
                     <Modal.Content scrolling>
                         <Form>
-                            {this.props.textArea ?
-                                <Form.TextArea
-                                    autoHeight
+                        {this.props.textArea ?
+                            <Form.TextArea
+                                autoHeight
+                                onChange={(event) => this.handleChange(event)}
+                                placeholder='Vennligst fyll inn innhold...'
+                                rows={1}
+                                value={this.state.value}
+                            />
+
+                            :
+
+                            <Form.Field>
+                                <input
                                     onChange={(event) => this.handleChange(event)}
-                                    placeholder='Vennligst fyll inn innhold...'
-                                    rows={1}
+                                    placeholder='Vennligst fyll inn...'
                                     value={this.state.value}
                                 />
-
-                                :
-
-                                <Form.Field>
-                                    <input
-                                        onChange={(event) => this.handleChange(event)}
-                                        placeholder='Vennligst fyll inn...'
-                                        value={this.state.value}
-                                    />
-                                </Form.Field>
-                            }
+                            </Form.Field>
+                        }
                         </Form>
                     </Modal.Content>
 

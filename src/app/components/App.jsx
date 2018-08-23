@@ -69,9 +69,9 @@ export default class App extends Component {
                             <Nav signedIn={this.state.signedIn}></Nav>
 
                             <Route exact path="/" render={() => <LandingPage signedIn={this.state.signedIn} home={this.state.home} updateHome={(homeContent) => this.updateHome(homeContent)} />}/>
-                            <Route path="/evanger" render={() => <Store signedIn={this.state.signedIn} store={this.state.stores.Evanger} updateStore={(storeContent) => this.updateStore(storeContent)} />}/>
-                            <Route path="/kvamskogen" render={() => <Store signedIn={this.state.signedIn} store={this.state.stores.Kvamskogen} updateStore={(storeContent) => this.updateStore(storeContent)} />}/>
-                            <Route path="/tysse" render={() => <Store signedIn={this.state.signedIn} store={this.state.stores.Tysse} updateStore={(storeContent) => this.updateStore(storeContent)} />}/>
+                            <Route path="/evanger" render={() => <Store signedIn={this.state.signedIn} store={this.state.stores.evanger} updateStore={(storeContent) => this.updateStore(storeContent)} />}/>
+                            <Route path="/kvamskogen" render={() => <Store signedIn={this.state.signedIn} store={this.state.stores.kvamskogen} updateStore={(storeContent) => this.updateStore(storeContent)} />}/>
+                            <Route path="/tysse" render={() => <Store signedIn={this.state.signedIn} store={this.state.stores.tysse} updateStore={(storeContent) => this.updateStore(storeContent)} />}/>
                             <Route path="/admin" render={() => <Admin signedIn={this.state.signedIn} />} />
 
                             <Footer signedIn={this.state.signedIn}></Footer>

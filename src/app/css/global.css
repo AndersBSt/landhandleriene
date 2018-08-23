@@ -1,8 +1,25 @@
 :root {
-    /* Colors */ 
+    /* Colors */
     --primary-color: #795548;
     --secondary-color: #4caf50;
     --accent-color: #ff5722;
     --black: #252525;
     --white: #fcfcfc;
+}
+
+p {
+    font-size: 1.35em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcome {
+	font-family: "NimbusMono", monospace;
+	font-size: 3.5em;
+}
+
+.header {
+    font-size: 2.8em;
+    font-weight: 200;
 }

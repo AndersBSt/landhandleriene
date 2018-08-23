@@ -14,7 +14,7 @@ export default class Admin extends Component {
     handleSubmit(e) {
         e.preventDefault();
         this.setState({errMsg: null});
-        signIn(this.emailRef.value, this.passwordRef.value).catch(error => this.setState({errMsg: error.message}))
+        signIn(this.emailRef.value, this.passwordRef.value).catch(error => this.setState({errMsg: error.message}));
     }
 
     render() {
