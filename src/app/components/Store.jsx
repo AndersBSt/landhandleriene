@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import { Segment, Rail } from 'semantic-ui-react';
+import { Container, Segment, Rail } from 'semantic-ui-react';
 
 import EditAttribute from './EditAttribute';
-
-import { Container } from 'semantic-ui-react';
 
 export default class Store extends Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             storeId: this.props.store.storeId,
             storeName: this.props.store.storeName,
@@ -38,7 +36,7 @@ export default class Store extends Component {
                             <Rail attached position='right'>
                                 <EditAttribute
                                     attribute='storeName'
-                                    changeStore={(attribute, value) => this.changeStore(attribute, value)}
+                                    handleChangeParent={(attribute, value) => this.changeStore(attribute, value)}
                                     label='Endre Butikk Navn'
                                     value={this.state.storeName}
                                 />
@@ -52,21 +50,21 @@ export default class Store extends Component {
                             <Rail attached position='right'>
                                 <EditAttribute
                                     attribute='header'
-                                    changeStore={(attribute, value) => this.changeStore(attribute, value)}
+                                    handleChangeParent={(attribute, value) => this.changeStore(attribute, value)}
                                     label='Endre Topptekst'
                                     value={this.state.header}
                                 />
                             </Rail>
                         }
                     </Segment>
-                    
+
                     <Segment basic textAlign='center'>
                         <p>{this.props.store.content1}</p>
                             {signedIn &&
                                 <Rail attached position='right'>
                                     <EditAttribute
                                         attribute='content1'
-                                        changeStore={(attribute, value) => this.changeStore(attribute, value)}
+                                        handleChangeParent={(attribute, value) => this.changeStore(attribute, value)}
                                         label='Endre Seksjon'
                                         textArea
                                         value={this.state.content1}
@@ -81,7 +79,7 @@ export default class Store extends Component {
                                 <Rail attached position='right'>
                                     <EditAttribute
                                         attribute='content2'
-                                        changeStore={(attribute, value) => this.changeStore(attribute, value)}
+                                        handleChangeParent={(attribute, value) => this.changeStore(attribute, value)}
                                         label='Endre Seksjon'
                                         textArea
                                         value={this.state.content2}

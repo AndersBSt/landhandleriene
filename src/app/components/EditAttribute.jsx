@@ -30,7 +30,7 @@ export default class EditAttribute extends Component {
     }
 
     save() {
-        this.props.changeStore(this.props.attribute, this.state.value);
+        this.props.handleChangeParent(this.props.attribute, this.state.value);
         this.toggleModal();
     }
 
@@ -62,10 +62,9 @@ export default class EditAttribute extends Component {
 
                     <Modal.Content scrolling>
                         <Form>
-                            {this.props.textArea ? 
+                            {this.props.textArea ?
                                 <Form.TextArea
                                     autoHeight
-                                    label={this.props.label + ':'}
                                     onChange={(event) => this.handleChange(event)}
                                     placeholder='Vennligst fyll inn innhold...'
                                     rows={1}
@@ -75,7 +74,6 @@ export default class EditAttribute extends Component {
                                 :
 
                                 <Form.Field>
-                                    <label>{this.props.label + ':'} </label>
                                     <input
                                         onChange={(event) => this.handleChange(event)}
                                         placeholder='Vennligst fyll inn...'

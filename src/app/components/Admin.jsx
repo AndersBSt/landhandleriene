@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
+import { Container } from 'semantic-ui-react';
 
 import { signIn } from '../../server/firebase/firebase';
-
-import { Container } from 'semantic-ui-react';
 
 export default class Admin extends Component {
     constructor(props) {
@@ -21,9 +20,9 @@ export default class Admin extends Component {
     render() {
         return (
             <Container>
-                {this.props.signedIn ? 
+                {this.props.signedIn ?
                 <div>
-                    <h1>Velkommen!</h1> 
+                    <h1>Velkommen!</h1>
                     <p>Du har nå tilgang til å endre tekster på nettsiden.</p>
                 </div> :
                 <form onSubmit={ (e) => this.handleSubmit(e)}>
