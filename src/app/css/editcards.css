@@ -1,0 +1,12 @@
+.ui.form .fields {
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.ui.form:first-of-type .grouped.fields:first-of-type {
+		margin-left: 23px;
+	}
+}
+.ui.form .grouped.fields {
+	margin: 0 10px 0;
+}
