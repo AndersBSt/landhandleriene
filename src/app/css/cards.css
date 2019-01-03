@@ -1,0 +1,21 @@
+.ui.cards > .card, .ui.card {
+	box-shadow: none;
+}
+
+.ui.cards > .card > .content > .header, .ui.card > .content > .header {
+	font-family: 'Euphoria Script';
+}
+
+.ui.cards > .card > .content > .header:not(.ui), .ui.card > .content > .header:not(.ui) {
+	font-size: 2em;
+}
+
+.ui.cards > .card > .content > .description, .ui.card > .content > .description {
+	color: black;
+	font-size: 1.35em;
+	line-height: 1.4285em;
+}
+
+.ui.cards > .middle-card {
+	margin-top: 80px;
+}

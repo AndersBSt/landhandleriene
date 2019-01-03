@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, Segment, Form } from 'semantic-ui-react'
+import { Rail, Button, Modal, Form } from 'semantic-ui-react';
 
 export default class EditAttribute extends Component {
     constructor(props) {
@@ -37,7 +37,7 @@ export default class EditAttribute extends Component {
 
     render() {
         return (
-            <div>
+            <Rail attached position='right'>
                 <Button
                     attached='right'
                     content={this.props.label}
@@ -46,7 +46,7 @@ export default class EditAttribute extends Component {
                     primary
                 />
 
-                <Modal open={this.state.visible}>
+                <Modal open={this.state.visible} size='tiny'>
                     <Modal.Header>
                         {this.props.label}
                     </Modal.Header>
@@ -88,7 +88,7 @@ export default class EditAttribute extends Component {
                         />
                     </Modal.Actions>
                 </Modal>
-            </div>
+            </Rail>
         );
     }
 }

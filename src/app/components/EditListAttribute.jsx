@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, Form } from 'semantic-ui-react';
+import { Rail, Button, Modal, Form } from 'semantic-ui-react';
 
 export default class EditListAttribute extends Component {
     constructor(props) {
@@ -72,8 +72,8 @@ export default class EditListAttribute extends Component {
 
                 :
 
-                <Form.Field>
-                    <input key={index}
+                <Form.Field key={index}>
+                    <input
                         onChange={(event) => this.handleChange(event, index)}
                         placeholder='Vennligst fyll inn...'
                         value={day}
@@ -84,7 +84,7 @@ export default class EditListAttribute extends Component {
 
     render() {
         return (
-            <div>
+            <Rail attached position='right'>
                 <Button
                     attached='right'
                     content={this.props.label}
@@ -93,7 +93,7 @@ export default class EditListAttribute extends Component {
                     primary
                 />
 
-                <Modal open={this.state.visible}>
+                <Modal open={this.state.visible} size='tiny'>
                     <Modal.Header>
                         {this.props.label}
                     </Modal.Header>
@@ -125,7 +125,7 @@ export default class EditListAttribute extends Component {
                         />
                     </Modal.Actions>
                 </Modal>
-            </div>
+            </Rail>
         );
     }
 }
