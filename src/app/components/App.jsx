@@ -34,7 +34,13 @@ export default class App extends Component {
         this.authListerner = firebaseAuth.onAuthStateChanged((user) => {
             if(user){
                 this.setState({signedIn: true});
-            } else {
+            }
+            else if (this.state.signedIn == true) {
+                this.setState({
+                    signedIn: false
+                });
+            }
+            else {
                 const {signedIn, ...state} = this.state;
                 this.setState({state});
             }
